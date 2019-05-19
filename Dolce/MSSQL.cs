@@ -11,7 +11,6 @@ namespace Dolce
     {
         static string connectionString = "Data Source=abd.wwsi.edu.pl;Initial Catalog=!D4052019;Persist Security Info=True;User ID=d4052019;Password=wwsid405";
         static SqlConnection conn = new SqlConnection(connectionString);
-        // id, ile, kto, komu, opis, rozliczone
         static public List<Rozliczenie> RecentSelector()
         {
             string command = @"SELECT Dolce.Transakcje.IdTransakcji, 

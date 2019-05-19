@@ -15,10 +15,6 @@ namespace Dolce
     public partial class Main : Form
     {
         /*
-         * Select and execute selected data source method to get recent transactions
-         */
-
-        /*
          * Set DB method and create object
          */
         DBHandler main = new DBHandler("MSSQL");
@@ -30,7 +26,6 @@ namespace Dolce
                 AppendMainForm(recents[i].Id, recents[i].Ile, recents[i].Komentarz, recents[i].Kto, recents[i].Komu, recents[i].Rozliczone);
             }
         }
-
         
         public Main()
         {
