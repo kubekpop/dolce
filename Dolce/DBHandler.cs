@@ -8,7 +8,7 @@ namespace Dolce
 {
     public class DBHandler
     {
-        public DBHandler (string method)
+        public DBHandler(string method)
         {
             this.Method = method;
         }
@@ -24,6 +24,28 @@ namespace Dolce
                     return MSSQL.RecentSelector();
                 default:
                     return new List<Rozliczenie>();
+            }
+        }
+        public List<Osoba> PeopleSelector()
+        {
+            switch (Method)
+            {
+                case "MSSQL":
+                    //call MSSQL class RecentSelector
+                    return MSSQL.PeopleSelector();
+                default:
+                    return new List<Osoba>();
+            }
+        }
+        public void AddRozliczenie()
+        {
+            switch (Method)
+            {
+                case "MSSQL":
+                    //call MSSQL class AddRozliczenie
+                    break;
+                default:
+                    break;
             }
         }
     }

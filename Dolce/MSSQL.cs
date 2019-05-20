@@ -36,5 +36,27 @@ namespace Dolce
             conn.Close();
             return Elements;
         }
+        static public List<Osoba> PeopleSelector()
+        {
+            List<Osoba> Osoby = new List<Osoba>();
+            string command = @"SELECT Dolce.Osoby.IdOsoby,
+            Dolce.Osoby.Imie + ' ' + Dolce.Osoby.Nazwisko AS Kto
+            FROM Dolce.Osoby";
+            SqlCommand sql = new SqlCommand(command, conn);
+            conn.Open();
+            SqlDataReader r = sql.ExecuteReader();
+            while (r.Read())
+            {
+                Osoba temp = new Osoba(Convert.ToInt32(r[0].ToString()), r[1].ToString());
+                Osoby.Add(temp);
+            }
+            conn.Close();
+
+            return Osoby;
+        }
+        static public void AddRozliczenie()
+        {
+            //string command = @"INSERT INTO "
+        }
     }
 }

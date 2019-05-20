@@ -14,30 +14,25 @@ namespace Dolce
     public partial class AddNew : Form
     {
         private DataGridView ostatnie;
-
+        DBHandler main = new DBHandler("MSSQL");
         public AddNew(DataGridView ostatnie)
         {
             this.ostatnie = ostatnie;
             InitializeComponent();
-        }
-        public void DBAddRecordMSSQL()
-        {
-            string connectionString = "Data Source=abd.wwsi.edu.pl;Initial Catalog=!D4052019;Persist Security Info=True;User ID=d4052019;Password=wwsid405";
-            SqlConnection conn = new SqlConnection(connectionString);
-            string command = @"INSERT INTO Dolce.Transakcje(Kto, Komu, Ile, Komentarz)";
-            SqlCommand sql = new SqlCommand(command, conn);
-            conn.Open();
-            SqlDataReader r = sql.ExecuteReader();
-            while (r.Read())
+            List<Osoba> ppl = main.PeopleSelector();
+            for (int i = 0; i < ppl.Count(); i++)
             {
-                //check for error
+                KtoCombo.Items.Add(ppl[i]);
             }
-            conn.Close();
-
         }
+
+
+
         private void Dodaj_Click(object sender, EventArgs e)
         {
-            ostatnie.Rows.Add(KtoCombo.SelectedItem.ToString(), KomuCombo.SelectedItem.ToString(), Ile.Value, Opis.Text, Rozliczone.Checked);
+            Osoba tmp = (Osoba)KtoCombo.SelectedItem;
+            Opis.Text = tmp.Id.ToString();
+            //ostatnie.Rows.Add(KtoCombo.SelectedItem.ToString(), KomuCombo.SelectedItem.ToString(), Ile.Value, Opis.Text, Rozliczone.Checked);
         }
     }
 }
