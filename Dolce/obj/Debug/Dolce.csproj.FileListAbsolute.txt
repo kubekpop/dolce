@@ -20,3 +20,14 @@ C:\Users\Kuba\Downloads\Dolce\Dolce\obj\Debug\Dolce.Main.resources
 C:\Users\Kuba\Downloads\Dolce\Dolce\obj\Debug\Dolce.Properties.Resources.resources
 C:\Users\Kuba\Downloads\Dolce\Dolce\obj\Debug\Dolce.csproj.GenerateResource.cache
 C:\Users\Kuba\Downloads\Dolce\Dolce\obj\Debug\Dolce.csproj.CoreCompileInputs.cache
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\bin\Debug\Dolce.exe.config
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\bin\Debug\Dolce.exe
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\bin\Debug\Dolce.pdb
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.csprojAssemblyReference.cache
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.AddNew.resources
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.Main.resources
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.Properties.Resources.resources
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.csproj.GenerateResource.cache
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.csproj.CoreCompileInputs.cache
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.exe
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.pdb

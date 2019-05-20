@@ -45,13 +45,8 @@
             // KtoCombo
             // 
             this.KtoCombo.FormattingEnabled = true;
-            this.KtoCombo.Items.AddRange(new object[] {
-            "Kubix",
-            "Krzysio",
-            "Karol",
-            "Kubek"});
             this.KtoCombo.Location = new System.Drawing.Point(204, 85);
-            this.KtoCombo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.KtoCombo.Margin = new System.Windows.Forms.Padding(6);
             this.KtoCombo.Name = "KtoCombo";
             this.KtoCombo.Size = new System.Drawing.Size(238, 33);
             this.KtoCombo.TabIndex = 0;
@@ -86,7 +81,7 @@
             "Kebab",
             "Picie u kubixa"});
             this.KomuCombo.Location = new System.Drawing.Point(204, 179);
-            this.KomuCombo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.KomuCombo.Margin = new System.Windows.Forms.Padding(6);
             this.KomuCombo.Name = "KomuCombo";
             this.KomuCombo.Size = new System.Drawing.Size(238, 33);
             this.KomuCombo.TabIndex = 3;
@@ -105,7 +100,7 @@
             // 
             this.Ile.DecimalPlaces = 2;
             this.Ile.Location = new System.Drawing.Point(204, 258);
-            this.Ile.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Ile.Margin = new System.Windows.Forms.Padding(6);
             this.Ile.Name = "Ile";
             this.Ile.Size = new System.Drawing.Size(240, 31);
             this.Ile.TabIndex = 5;
@@ -123,7 +118,7 @@
             // Opis
             // 
             this.Opis.Location = new System.Drawing.Point(204, 365);
-            this.Opis.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Opis.Margin = new System.Windows.Forms.Padding(6);
             this.Opis.Name = "Opis";
             this.Opis.Size = new System.Drawing.Size(468, 166);
             this.Opis.TabIndex = 7;
@@ -132,7 +127,7 @@
             // Dodaj
             // 
             this.Dodaj.Location = new System.Drawing.Point(36, 650);
-            this.Dodaj.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Dodaj.Margin = new System.Windows.Forms.Padding(6);
             this.Dodaj.Name = "Dodaj";
             this.Dodaj.Size = new System.Drawing.Size(150, 44);
             this.Dodaj.TabIndex = 8;
@@ -144,7 +139,7 @@
             // 
             this.Rozliczone.AutoSize = true;
             this.Rozliczone.Location = new System.Drawing.Point(36, 606);
-            this.Rozliczone.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Rozliczone.Margin = new System.Windows.Forms.Padding(6);
             this.Rozliczone.Name = "Rozliczone";
             this.Rozliczone.Size = new System.Drawing.Size(150, 29);
             this.Rozliczone.TabIndex = 9;
@@ -178,7 +173,7 @@
             this.Controls.Add(this.KomuLabel);
             this.Controls.Add(this.KtoLabel);
             this.Controls.Add(this.KtoCombo);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "AddNew";
             this.Text = "AddNew";
             ((System.ComponentModel.ISupportInitialize)(this.Ile)).EndInit();
