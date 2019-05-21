@@ -34,8 +34,10 @@ namespace Dolce
 
         private void Dodaj_Click(object sender, EventArgs e)
         {
-            Osoba tmp = (Osoba)KtoCombo.SelectedItem;
-            Opis.Text = tmp.Id.ToString();
+            Osoba kto = (Osoba)KtoCombo.SelectedItem;
+            Osoba komu = (Osoba)KomuCombo.SelectedItem;
+            Rozliczenie rozl = new Rozliczenie(0, this.Ile.Value, kto, komu, this.Opis.Text, false);
+            //Opis.Text = tmp.Id.ToString();
             //ostatnie.Rows.Add(KtoCombo.SelectedItem.ToString(), KomuCombo.SelectedItem.ToString(), Ile.Value, Opis.Text, Rozliczone.Checked);
         }
     }
