@@ -57,8 +57,7 @@ namespace Dolce
         static public void AddRozliczenie(Rozliczenie rozliczenie)
         {
             string command = @"INSERT INTO Dolce.Rozliczenia(IdKto,IdKomu,Ile,Opis) VALUES(
-
-)";
+            "+rozliczenie.KtoOsoba.Id+", "+rozliczenie.KomuOsoba.Id+", "+rozliczenie.Ile+", "+rozliczenie.Komentarz+")";
             SqlCommand sql = new SqlCommand(command, conn);
             conn.Open();
             //SqlDataReader r = sql.ExecuteReader();
