@@ -70,5 +70,15 @@ namespace Dolce
         {
 
         }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            if (Recent.SelectedRows.Count == 1)
+            {
+                int idd = Convert.ToInt32(Recent.SelectedRows[0].Cells[0].Value);
+                var edit = new Modify(idd);
+                edit.Show();
+            }
+        }
     }
 }
