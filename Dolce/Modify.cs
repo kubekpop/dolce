@@ -16,8 +16,12 @@ namespace Dolce
         {
             InitializeComponent();
             IdLabelEdytujDb.Text = id.ToString();
+            DBHandler main = new DBHandler("MSSQL");
+            rozliczenie = main.GetRozlicznie(id);
+            this.KtoLabelEdytujDb.Text = rozliczenie.KtoOsoba.FullName;
+            this.KomuLabelEdytujDb.Text = rozliczenie.KomuOsoba.FullName;
         }
-
+        Rozliczenie rozliczenie = null;
       
     }
 }

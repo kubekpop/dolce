@@ -50,7 +50,14 @@ namespace Dolce
                     break;
             }
         }
-
+        public Osoba OsobaSelector(int id)
+        {
+            return MSSQL.OsobaSelector(id);
+        }
+        public Rozliczenie GetRozlicznie(int id)
+        {
+            return MSSQL.GetRozliczenie(id);
+        }
         public void UpdateRozliczenie(Rozliczenie rozliczenie)
         {
 

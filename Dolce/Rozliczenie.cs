@@ -16,6 +16,8 @@ namespace Dolce
             this.Id_komu = id_komu;
             this.Komentarz = komentarz;
             this.Rozliczone = rozliczone;
+            this.KtoOsoba = kto;
+            this.KomuOsoba = komu;
         }
         //pseudo rozliczenie used by recents chart
         public Rozliczenie(int id, decimal ile, string kto, string komu, string komentarz, bool rozliczone)
