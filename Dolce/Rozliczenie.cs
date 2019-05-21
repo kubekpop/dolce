@@ -8,7 +8,7 @@ namespace Dolce
 {
     public class Rozliczenie
     {
-        public Rozliczenie(int id, decimal ile, int id_kto, int id_komu, string komentarz, bool rozliczone)
+        public Rozliczenie(int id, decimal ile, Osoba kto, Osoba komu, string komentarz, bool rozliczone)
         {
             this.Id = id;
             this.Ile = ile;
@@ -27,6 +27,9 @@ namespace Dolce
             this.Komentarz = komentarz;
             this.Rozliczone = rozliczone;
         }
+        public Osoba KtoOsoba;
+        public Osoba KomuOsoba;
+
         int id;
         decimal ile;
         int id_kto;

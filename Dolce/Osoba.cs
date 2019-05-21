@@ -8,9 +8,16 @@
             this.Fullname = nazwa;
         }
 
+        public Osoba(int id, string imie, string nazwisko, string pesel)
+        {
+            this.Id = id;
+            this.Imie = imie;
+            this.Nazwisko = nazwisko;
+            this.Pesel = pesel;
+        }
         public override string ToString()
         {
-            return Fullname;
+            return Imie+" "+Nazwisko;
         }
 
         private int id;

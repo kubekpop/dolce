@@ -26,27 +26,34 @@ namespace Dolce
                     return new List<Rozliczenie>();
             }
         }
-        public List<Osoba> PeopleSelector()
+
+        public List<Osoba> PeopleSelectorId()
         {
             switch (Method)
             {
                 case "MSSQL":
                     //call MSSQL class RecentSelector
-                    return MSSQL.PeopleSelector();
+                    return MSSQL.PeopleSelectorId();
                 default:
                     return new List<Osoba>();
             }
         }
-        public void AddRozliczenie()
+        public void AddRozliczenie(Rozliczenie rozliczenie)
         {
             switch (Method)
             {
                 case "MSSQL":
+                    MSSQL.AddRozliczenie(rozliczenie);
                     //call MSSQL class AddRozliczenie
                     break;
                 default:
                     break;
             }
+        }
+
+        public void UpdateRozliczenie(Rozliczenie rozliczenie)
+        {
+
         }
     }
 }

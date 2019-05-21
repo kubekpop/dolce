@@ -19,7 +19,7 @@ namespace Dolce
         {
             this.ostatnie = ostatnie;
             InitializeComponent();
-            List<Osoba> ppl = main.PeopleSelector();
+            List<Osoba> ppl = main.PeopleSelectorId();
             KtoCombo.Items.Clear();
             KomuCombo.Items.Clear();
 
