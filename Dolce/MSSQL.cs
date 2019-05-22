@@ -11,7 +11,7 @@ namespace Dolce
     {
         static string connectionString = "Data Source=abd.wwsi.edu.pl;Initial Catalog=!D4052019;Persist Security Info=True;User ID=d4052019;Password=wwsid405";
         static SqlConnection conn = new SqlConnection(connectionString);
-        
+        static SqlCommand sql = new SqlCommand(null, conn);
         static public List<Rozliczenie> RecentSelector()
         {
             string command = @"SELECT Dolce.Transakcje.IdTransakcji, 
@@ -25,7 +25,7 @@ namespace Dolce
             FROM Dolce.Transakcje INNER JOIN
             Dolce.Osoby AS KtoOsoby ON Dolce.Transakcje.IdKto = KtoOsoby.IdOsoby INNER JOIN
             Dolce.Osoby AS KomuOsoby ON Dolce.Transakcje.IdKomu = KomuOsoby.IdOsoby";
-            SqlCommand sql = new SqlCommand(command, conn);
+            sql.CommandText = command;
             conn.Open();
             SqlDataReader rs = sql.ExecuteReader();
             List<Rozliczenie> Elements = new List<Rozliczenie>();
@@ -41,7 +41,7 @@ namespace Dolce
         static public Rozliczenie GetRozliczenie(int id)
         {
             string command = @"SELECT * FROM Dolce.Transakcje WHERE IdTransakcji = '" + id + "'";
-            SqlCommand sql = new SqlCommand(command, conn);
+            sql.CommandText = command;
             conn.Open();
             SqlDataReader gr = sql.ExecuteReader();
             Rozliczenie temp = null;
@@ -59,16 +59,20 @@ namespace Dolce
         static public Osoba OsobaSelector(int id)
         {
             string command = @"SELECT Dolce.Osoby.IdOsoby,
-            Dolce.Osoby.Imie, Dolce.Osoby.Nazwisko, Dolce.Osoby.Pesel FROM Dolce.Osoby";
-            SqlCommand sql = new SqlCommand(command, conn);
-            if (conn.State == System.Data.ConnectionState.Closed) conn.Open();
-            SqlDataReader os = sql.ExecuteReader();
+            Dolce.Osoby.Imie, Dolce.Osoby.Nazwisko, Dolce.Osoby.Pesel FROM Dolce.Osoby WHERE IdOsoby = '"+id+"'";
+
+            SqlConnection conn2 = new SqlConnection(connectionString);
+            SqlCommand sql2 = new SqlCommand(null, conn2);
+
+            if (conn2.State == System.Data.ConnectionState.Closed) conn2.Open();
+            sql2.CommandText = command;
+            SqlDataReader os = sql2.ExecuteReader();
             Osoba temp = null;
             while (os.Read())
             {
                 temp = new Osoba(Convert.ToInt32(os[0].ToString()), os[1].ToString(), os[2].ToString(), os[3].ToString());
             }
-            conn.Close();
+            conn2.Close();
             return temp;
         }
         static public List<Osoba> PeopleSelectorId()
@@ -76,7 +80,7 @@ namespace Dolce
             List<Osoba> Osoby = new List<Osoba>();
             string command = @"SELECT Dolce.Osoby.IdOsoby,
             Dolce.Osoby.Imie, Dolce.Osoby.Nazwisko, Dolce.Osoby.Pesel FROM Dolce.Osoby";
-            SqlCommand sql = new SqlCommand(command, conn);
+            sql.CommandText = command;
             conn.Open();
             SqlDataReader psi = sql.ExecuteReader();
             while (psi.Read())
@@ -91,7 +95,7 @@ namespace Dolce
         static public void AddRozliczenie(Rozliczenie rozliczenie)
         {
             string command = @"INSERT INTO Dolce.Transakcje(IdKto,IdKomu,Ile,Opis) VALUES('"+rozliczenie.KtoOsoba.Id+"', '"+rozliczenie.KomuOsoba.Id+"', '"+rozliczenie.Ile+"', '"+rozliczenie.Komentarz+"')";
-            SqlCommand sql = new SqlCommand(command, conn);
+            sql.CommandText = command;
             conn.Open();
             sql.ExecuteReader();
             conn.Close();
