@@ -60,7 +60,12 @@ namespace Dolce
         }
         public void UpdateRozliczenie(Rozliczenie rozliczenie)
         {
-
+            switch (Method)
+            {
+                case "MSSQL":
+                    MSSQL.UpdateRozliczenie(rozliczenie);
+                    break;
+            }
         }
     }
 }

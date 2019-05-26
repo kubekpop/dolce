@@ -10,8 +10,8 @@ namespace Dolce
     static class MSSQL
     {
         static string connectionString = "Data Source=abd.wwsi.edu.pl;Initial Catalog=!D4052019;Persist Security Info=True;User ID=d4052019;Password=wwsid405";
-        static SqlConnection conn = new SqlConnection(connectionString);
-        static SqlCommand sql = new SqlCommand(null, conn);
+
+
         static public List<Rozliczenie> RecentSelector()
         {
             string command = @"SELECT Dolce.Transakcje.IdTransakcji, 
@@ -25,6 +25,8 @@ namespace Dolce
             FROM Dolce.Transakcje INNER JOIN
             Dolce.Osoby AS KtoOsoby ON Dolce.Transakcje.IdKto = KtoOsoby.IdOsoby INNER JOIN
             Dolce.Osoby AS KomuOsoby ON Dolce.Transakcje.IdKomu = KomuOsoby.IdOsoby";
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand sql = new SqlCommand(null, conn);
             sql.CommandText = command;
             conn.Open();
             SqlDataReader rs = sql.ExecuteReader();
@@ -40,6 +42,8 @@ namespace Dolce
 
         static public Rozliczenie GetRozliczenie(int id)
         {
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand sql = new SqlCommand(null, conn);
             string command = @"SELECT * FROM Dolce.Transakcje WHERE IdTransakcji = '" + id + "'";
             sql.CommandText = command;
             conn.Open();
@@ -48,31 +52,32 @@ namespace Dolce
             while (gr.Read())
             {
                 DBHandler main = new DBHandler("MSSQL");
-                Osoba kto = main.OsobaSelector(Convert.ToInt32(gr[1]));
-                Osoba komu = main.OsobaSelector(Convert.ToInt32(gr[2]));
+                int kto_id = Convert.ToInt32(gr[1]);
+                Osoba kto = main.OsobaSelector(kto_id);
+                int komu_id = Convert.ToInt32(gr[2]);
+                Osoba komu = main.OsobaSelector(komu_id);
                 temp = new Rozliczenie(Convert.ToInt32(gr[0]), Convert.ToDecimal(gr[3]), kto, komu, gr[4].ToString(), Convert.ToBoolean(gr[6]));
-               
             }
             conn.Close();
             return temp;
         }
         static public Osoba OsobaSelector(int id)
         {
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand sql = new SqlCommand(null, conn);
             string command = @"SELECT Dolce.Osoby.IdOsoby,
             Dolce.Osoby.Imie, Dolce.Osoby.Nazwisko, Dolce.Osoby.Pesel FROM Dolce.Osoby WHERE IdOsoby = '"+id+"'";
 
-            SqlConnection conn2 = new SqlConnection(connectionString);
-            SqlCommand sql2 = new SqlCommand(null, conn2);
-
-            if (conn2.State == System.Data.ConnectionState.Closed) conn2.Open();
-            sql2.CommandText = command;
-            SqlDataReader os = sql2.ExecuteReader();
+           
+            conn.Open();
+            sql.CommandText = command;
+            SqlDataReader os = sql.ExecuteReader();
             Osoba temp = null;
             while (os.Read())
             {
                 temp = new Osoba(Convert.ToInt32(os[0].ToString()), os[1].ToString(), os[2].ToString(), os[3].ToString());
             }
-            conn2.Close();
+            conn.Close();
             return temp;
         }
         static public List<Osoba> PeopleSelectorId()
@@ -80,6 +85,8 @@ namespace Dolce
             List<Osoba> Osoby = new List<Osoba>();
             string command = @"SELECT Dolce.Osoby.IdOsoby,
             Dolce.Osoby.Imie, Dolce.Osoby.Nazwisko, Dolce.Osoby.Pesel FROM Dolce.Osoby";
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand sql = new SqlCommand(null, conn);
             sql.CommandText = command;
             conn.Open();
             SqlDataReader psi = sql.ExecuteReader();
@@ -94,7 +101,22 @@ namespace Dolce
         }
         static public void AddRozliczenie(Rozliczenie rozliczenie)
         {
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand sql = new SqlCommand(null, conn);
             string command = @"INSERT INTO Dolce.Transakcje(IdKto,IdKomu,Ile,Opis) VALUES('"+rozliczenie.KtoOsoba.Id+"', '"+rozliczenie.KomuOsoba.Id+"', '"+rozliczenie.Ile+"', '"+rozliczenie.Komentarz+"')";
+            sql.CommandText = command;
+            conn.Open();
+            sql.ExecuteReader();
+            conn.Close();
+        }
+        static public void UpdateRozliczenie(Rozliczenie rozliczenie)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand sql = new SqlCommand(null, conn);
+            Console.WriteLine(rozliczenie.Id);
+            string command = @"UPDATE Dolce.Transakcje "+
+            "SET IdKto = "+rozliczenie.Id_kto+", IdKomu = "+rozliczenie.Id_komu+", Ile = '"+rozliczenie.Ile+"' " +
+            "WHERE IdTransakcji = '"+rozliczenie.Id+"'";
             sql.CommandText = command;
             conn.Open();
             sql.ExecuteReader();

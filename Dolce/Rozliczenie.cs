@@ -12,8 +12,8 @@ namespace Dolce
         {
             this.Id = id;
             this.Ile = ile;
-            this.Id_kto = id_kto;
-            this.Id_komu = id_komu;
+            this.Id_kto = kto.Id;
+            this.Id_komu = komu.Id;
             this.Komentarz = komentarz;
             this.Rozliczone = rozliczone;
             this.KtoOsoba = kto;

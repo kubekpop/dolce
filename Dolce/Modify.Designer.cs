@@ -37,6 +37,7 @@
             this.ileEdytujDb = new System.Windows.Forms.NumericUpDown();
             this.IdLabelEdytuj = new System.Windows.Forms.Label();
             this.IdLabelEdytujDb = new System.Windows.Forms.Label();
+            this.SaveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ileEdytujDb)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,11 +120,22 @@
             this.IdLabelEdytujDb.TabIndex = 8;
             this.IdLabelEdytujDb.Text = "<ID>";
             // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(88, 419);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(288, 100);
+            this.SaveButton.TabIndex = 9;
+            this.SaveButton.Text = "Zapisz";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
             // Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1419, 823);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.IdLabelEdytujDb);
             this.Controls.Add(this.IdLabelEdytuj);
             this.Controls.Add(this.ileEdytujDb);
@@ -152,5 +164,6 @@
         private System.Windows.Forms.NumericUpDown ileEdytujDb;
         private System.Windows.Forms.Label IdLabelEdytuj;
         private System.Windows.Forms.Label IdLabelEdytujDb;
+        private System.Windows.Forms.Button SaveButton;
     }
 }
