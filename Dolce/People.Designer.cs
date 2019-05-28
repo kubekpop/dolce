@@ -59,7 +59,7 @@
             // PeselLabel
             // 
             this.PeselLabel.AutoSize = true;
-            this.PeselLabel.Location = new System.Drawing.Point(65, 289);
+            this.PeselLabel.Location = new System.Drawing.Point(65, 286);
             this.PeselLabel.Name = "PeselLabel";
             this.PeselLabel.Size = new System.Drawing.Size(66, 25);
             this.PeselLabel.TabIndex = 2;
@@ -72,6 +72,7 @@
             this.OsobaCombo.Name = "OsobaCombo";
             this.OsobaCombo.Size = new System.Drawing.Size(284, 33);
             this.OsobaCombo.TabIndex = 3;
+            this.OsobaCombo.TextChanged += new System.EventHandler(this.OsobaCombo_TextChanged);
             // 
             // SaveButton
             // 
@@ -85,21 +86,22 @@
             // 
             // Imie
             // 
-            this.Imie.Location = new System.Drawing.Point(365, 159);
+            this.Imie.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.Imie.Location = new System.Drawing.Point(365, 161);
             this.Imie.Name = "Imie";
             this.Imie.Size = new System.Drawing.Size(272, 31);
             this.Imie.TabIndex = 5;
             // 
             // Nazwisko
             // 
-            this.Nazwisko.Location = new System.Drawing.Point(359, 215);
+            this.Nazwisko.Location = new System.Drawing.Point(365, 221);
             this.Nazwisko.Name = "Nazwisko";
             this.Nazwisko.Size = new System.Drawing.Size(277, 31);
             this.Nazwisko.TabIndex = 6;
             // 
             // Pesel
             // 
-            this.Pesel.Location = new System.Drawing.Point(359, 289);
+            this.Pesel.Location = new System.Drawing.Point(365, 283);
             this.Pesel.Name = "Pesel";
             this.Pesel.Size = new System.Drawing.Size(300, 31);
             this.Pesel.TabIndex = 7;

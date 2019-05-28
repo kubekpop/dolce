@@ -122,15 +122,15 @@ namespace Dolce
         }
         static public void EditOsoba(Osoba osoba)
         {
-            /*
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand sql = new SqlCommand(null, conn);
-            string command = @"INSERT INTO Dolce.Osoby(Imie, Nazwisko, Pesel) VALUES('" + imie + "', '" + nazwisko + "', '" + pesel + "')";
+            string command = @"UPDATE Dolce.Osoby " +
+            "SET Imie = '" + osoba.Imie + "', Nazwisko = '" + osoba.Nazwisko + "', Pesel = '" + osoba.Pesel + "' " +
+            "WHERE IdOsoby = '" + osoba.Id + "'";
             sql.CommandText = command;
             conn.Open();
             sql.ExecuteReader();
             conn.Close();
-            */
         }
 
         static public void UpdateRozliczenie(Rozliczenie rozliczenie)

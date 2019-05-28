@@ -20,10 +20,16 @@ namespace Dolce
             List<Osoba> ppl = main.PeopleSelectorId();
             this.OsobaCombo.Items.Clear();
             this.OsobaCombo.Items.Add("<nowa>");
+            this.OsobaCombo.SelectedIndex = 0;
             for (int i = 0; i < ppl.Count(); i++)
             {
                 OsobaCombo.Items.Add(ppl[i]);
             }
+            this.Imie.Select();
+            /*
+             * textbox1.Select(textbox1.Text.Length,0);
+             * Sets the cursor to the end of the text in yout textbox.
+             */
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -41,6 +47,26 @@ namespace Dolce
                 main.EditOsoba(osoba);
             }
             this.Close();
+        }
+
+        private void OsobaCombo_TabIndexChanged(object sender, EventArgs e)
+        {
+            Osoba osoba = (Osoba)this.OsobaCombo.SelectedItem;
+            this.Imie.Text = osoba.Imie;
+            this.Nazwisko.Text = osoba.Nazwisko;
+            this.Pesel.Text = osoba.Pesel;
+
+        }
+
+        private void OsobaCombo_TextChanged(object sender, EventArgs e)
+        {
+            if (OsobaCombo.SelectedItem.ToString() != "<nowa>")
+            {
+                Osoba osoba = (Osoba)this.OsobaCombo.SelectedItem;
+                this.Imie.Text = osoba.Imie;
+                this.Nazwisko.Text = osoba.Nazwisko;
+                this.Pesel.Text = osoba.Pesel;
+            }
         }
     }
 }
