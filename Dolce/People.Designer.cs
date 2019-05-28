@@ -36,12 +36,13 @@
             this.Imie = new System.Windows.Forms.TextBox();
             this.Nazwisko = new System.Windows.Forms.TextBox();
             this.Pesel = new System.Windows.Forms.TextBox();
+            this.TitleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ImieLabel
             // 
             this.ImieLabel.AutoSize = true;
-            this.ImieLabel.Location = new System.Drawing.Point(65, 167);
+            this.ImieLabel.Location = new System.Drawing.Point(27, 161);
             this.ImieLabel.Name = "ImieLabel";
             this.ImieLabel.Size = new System.Drawing.Size(51, 25);
             this.ImieLabel.TabIndex = 0;
@@ -50,7 +51,7 @@
             // NazwiskoLabel
             // 
             this.NazwiskoLabel.AutoSize = true;
-            this.NazwiskoLabel.Location = new System.Drawing.Point(65, 227);
+            this.NazwiskoLabel.Location = new System.Drawing.Point(27, 221);
             this.NazwiskoLabel.Name = "NazwiskoLabel";
             this.NazwiskoLabel.Size = new System.Drawing.Size(104, 25);
             this.NazwiskoLabel.TabIndex = 1;
@@ -59,7 +60,7 @@
             // PeselLabel
             // 
             this.PeselLabel.AutoSize = true;
-            this.PeselLabel.Location = new System.Drawing.Point(65, 286);
+            this.PeselLabel.Location = new System.Drawing.Point(27, 283);
             this.PeselLabel.Name = "PeselLabel";
             this.PeselLabel.Size = new System.Drawing.Size(66, 25);
             this.PeselLabel.TabIndex = 2;
@@ -68,15 +69,15 @@
             // OsobaCombo
             // 
             this.OsobaCombo.FormattingEnabled = true;
-            this.OsobaCombo.Location = new System.Drawing.Point(439, 77);
+            this.OsobaCombo.Location = new System.Drawing.Point(219, 99);
             this.OsobaCombo.Name = "OsobaCombo";
-            this.OsobaCombo.Size = new System.Drawing.Size(284, 33);
+            this.OsobaCombo.Size = new System.Drawing.Size(418, 33);
             this.OsobaCombo.TabIndex = 3;
             this.OsobaCombo.TextChanged += new System.EventHandler(this.OsobaCombo_TextChanged);
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(693, 829);
+            this.SaveButton.Location = new System.Drawing.Point(219, 377);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(306, 54);
             this.SaveButton.TabIndex = 4;
@@ -87,30 +88,41 @@
             // Imie
             // 
             this.Imie.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.Imie.Location = new System.Drawing.Point(365, 161);
+            this.Imie.Location = new System.Drawing.Point(219, 158);
             this.Imie.Name = "Imie";
-            this.Imie.Size = new System.Drawing.Size(272, 31);
+            this.Imie.Size = new System.Drawing.Size(418, 31);
             this.Imie.TabIndex = 5;
             // 
             // Nazwisko
             // 
-            this.Nazwisko.Location = new System.Drawing.Point(365, 221);
+            this.Nazwisko.Location = new System.Drawing.Point(219, 218);
             this.Nazwisko.Name = "Nazwisko";
-            this.Nazwisko.Size = new System.Drawing.Size(277, 31);
+            this.Nazwisko.Size = new System.Drawing.Size(418, 31);
             this.Nazwisko.TabIndex = 6;
             // 
             // Pesel
             // 
-            this.Pesel.Location = new System.Drawing.Point(365, 283);
+            this.Pesel.Location = new System.Drawing.Point(219, 283);
             this.Pesel.Name = "Pesel";
-            this.Pesel.Size = new System.Drawing.Size(300, 31);
+            this.Pesel.Size = new System.Drawing.Size(418, 31);
             this.Pesel.TabIndex = 7;
+            // 
+            // TitleLabel
+            // 
+            this.TitleLabel.AutoSize = true;
+            this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TitleLabel.Location = new System.Drawing.Point(25, 25);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(195, 37);
+            this.TitleLabel.TabIndex = 8;
+            this.TitleLabel.Text = "Edytor Osób";
             // 
             // People
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1674, 974);
+            this.ClientSize = new System.Drawing.Size(750, 466);
+            this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.Pesel);
             this.Controls.Add(this.Nazwisko);
             this.Controls.Add(this.Imie);
@@ -136,5 +148,6 @@
         private System.Windows.Forms.TextBox Imie;
         private System.Windows.Forms.TextBox Nazwisko;
         private System.Windows.Forms.TextBox Pesel;
+        private System.Windows.Forms.Label TitleLabel;
     }
 }

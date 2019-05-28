@@ -21,6 +21,7 @@ namespace Dolce
             this.OsobaCombo.Items.Clear();
             this.OsobaCombo.Items.Add("<nowa>");
             this.OsobaCombo.SelectedIndex = 0;
+            this.OsobaCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             for (int i = 0; i < ppl.Count(); i++)
             {
                 OsobaCombo.Items.Add(ppl[i]);
@@ -48,16 +49,7 @@ namespace Dolce
             }
             this.Close();
         }
-        /*
-        private void OsobaCombo_TabIndexChanged(object sender, EventArgs e)
-        {
-            Osoba osoba = (Osoba)this.OsobaCombo.SelectedItem;
-            this.Imie.Text = osoba.Imie;
-            this.Nazwisko.Text = osoba.Nazwisko;
-            this.Pesel.Text = osoba.Pesel;
-
-        }
-        */
+        
         private void OsobaCombo_TextChanged(object sender, EventArgs e)
         {
             if (OsobaCombo.SelectedItem.ToString() != "<nowa>")
@@ -66,6 +58,12 @@ namespace Dolce
                 this.Imie.Text = osoba.Imie;
                 this.Nazwisko.Text = osoba.Nazwisko;
                 this.Pesel.Text = osoba.Pesel;
+            }
+            else
+            {
+                this.Imie.Text = "";
+                this.Nazwisko.Text = "";
+                this.Pesel.Text = "";
             }
         }
     }
