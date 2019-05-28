@@ -109,6 +109,30 @@ namespace Dolce
             sql.ExecuteReader();
             conn.Close();
         }
+
+        static public void AddOsoba(string imie, string nazwisko, string pesel)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand sql = new SqlCommand(null, conn);
+            string command = @"INSERT INTO Dolce.Osoby(Imie, Nazwisko, Pesel) VALUES('" + imie + "', '" + nazwisko + "', '" + pesel + "')";
+            sql.CommandText = command;
+            conn.Open();
+            sql.ExecuteReader();
+            conn.Close();
+        }
+        static public void EditOsoba(Osoba osoba)
+        {
+            /*
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand sql = new SqlCommand(null, conn);
+            string command = @"INSERT INTO Dolce.Osoby(Imie, Nazwisko, Pesel) VALUES('" + imie + "', '" + nazwisko + "', '" + pesel + "')";
+            sql.CommandText = command;
+            conn.Open();
+            sql.ExecuteReader();
+            conn.Close();
+            */
+        }
+
         static public void UpdateRozliczenie(Rozliczenie rozliczenie)
         {
             SqlConnection conn = new SqlConnection(connectionString);

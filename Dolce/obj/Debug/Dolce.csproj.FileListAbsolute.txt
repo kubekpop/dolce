@@ -32,3 +32,4 @@ C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.csproj.CoreCompileInp
 C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.exe
 C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.pdb
 C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.Modify.resources
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.People.resources

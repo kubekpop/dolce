@@ -67,5 +67,24 @@ namespace Dolce
                     break;
             }
         }
+
+        public void AddOsoba(string imie, string nazwisko, string pesel)
+        {
+            switch (Method)
+            {
+                case "MSSQL":
+                    MSSQL.AddOsoba(imie, nazwisko, pesel);
+                    break;
+            }
+        }
+        public void EditOsoba(Osoba osoba)
+        {
+            switch (Method)
+            {
+                case "MSSQL":
+                    MSSQL.EditOsoba(osoba);
+                    break;
+            }
+        }
     }
 }

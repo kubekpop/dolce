@@ -80,5 +80,11 @@ namespace Dolce
                 edit.Show();
             }
         }
+
+        private void People_Click(object sender, EventArgs e)
+        {
+            var people = new People();
+            people.Show();
+        }
     }
 }
