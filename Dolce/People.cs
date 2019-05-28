@@ -48,7 +48,7 @@ namespace Dolce
             }
             this.Close();
         }
-
+        /*
         private void OsobaCombo_TabIndexChanged(object sender, EventArgs e)
         {
             Osoba osoba = (Osoba)this.OsobaCombo.SelectedItem;
@@ -57,7 +57,7 @@ namespace Dolce
             this.Pesel.Text = osoba.Pesel;
 
         }
-
+        */
         private void OsobaCombo_TextChanged(object sender, EventArgs e)
         {
             if (OsobaCombo.SelectedItem.ToString() != "<nowa>")

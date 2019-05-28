@@ -30,6 +30,8 @@ namespace Dolce
         public Main()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
         }
 
         private void AddNew_Click(object sender, EventArgs e)
