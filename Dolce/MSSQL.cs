@@ -139,8 +139,8 @@ namespace Dolce
             SqlCommand sql = new SqlCommand(null, conn);
             Console.WriteLine(rozliczenie.Id);
             string command = @"UPDATE Dolce.Transakcje "+
-            "SET IdKto = "+rozliczenie.Id_kto+", IdKomu = "+rozliczenie.Id_komu+", Ile = '"+rozliczenie.Ile+"' " +
-            "WHERE IdTransakcji = '"+rozliczenie.Id+"'";
+            "SET IdKto = "+rozliczenie.Id_kto+", IdKomu = "+rozliczenie.Id_komu+", Ile = '"+rozliczenie.Ile+"', rozliczone = '" + Convert.ToInt32(rozliczenie.Rozliczone) + 
+            "' WHERE IdTransakcji = '"+rozliczenie.Id+"'";
             sql.CommandText = command;
             conn.Open();
             sql.ExecuteReader();

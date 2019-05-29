@@ -20,12 +20,14 @@ namespace Dolce
             this.KtoLabelEdytujDb.Text = rozliczenie.KtoOsoba.FullName;
             this.KomuLabelEdytujDb.Text = rozliczenie.KomuOsoba.FullName;
             this.ileEdytujDb.Value = rozliczenie.Ile;
+            this.RozliczoneCheck.Checked = rozliczenie.Rozliczone;
         }
         Rozliczenie rozliczenie = null;
         DBHandler main = new DBHandler("MSSQL");
         private void SaveButton_Click(object sender, EventArgs e)
         {
             rozliczenie.Ile = this.ileEdytujDb.Value;
+            rozliczenie.Rozliczone = this.RozliczoneCheck.Checked;
             main.UpdateRozliczenie(rozliczenie);
         }
     }

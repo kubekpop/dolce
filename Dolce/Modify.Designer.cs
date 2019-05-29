@@ -38,6 +38,7 @@
             this.IdLabelEdytuj = new System.Windows.Forms.Label();
             this.IdLabelEdytujDb = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.RozliczoneCheck = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.ileEdytujDb)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,11 +131,22 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // RozliczoneCheck
+            // 
+            this.RozliczoneCheck.AutoSize = true;
+            this.RozliczoneCheck.Location = new System.Drawing.Point(49, 358);
+            this.RozliczoneCheck.Name = "RozliczoneCheck";
+            this.RozliczoneCheck.Size = new System.Drawing.Size(150, 29);
+            this.RozliczoneCheck.TabIndex = 10;
+            this.RozliczoneCheck.Text = "Rozliczone";
+            this.RozliczoneCheck.UseVisualStyleBackColor = true;
+            // 
             // Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1419, 823);
+            this.Controls.Add(this.RozliczoneCheck);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.IdLabelEdytujDb);
             this.Controls.Add(this.IdLabelEdytuj);
@@ -165,5 +177,6 @@
         private System.Windows.Forms.Label IdLabelEdytuj;
         private System.Windows.Forms.Label IdLabelEdytujDb;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.CheckBox RozliczoneCheck;
     }
 }
