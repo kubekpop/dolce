@@ -39,6 +39,7 @@
             this.Komu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rozliczone = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.loading_panel = new System.Windows.Forms.Panel();
             this.People = new System.Windows.Forms.Button();
             this.Refresh = new System.Windows.Forms.Button();
             this.Generate = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.daneBaza = new Dolce.DaneBaza();
-            this.loading_panel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.Recent)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -150,6 +150,13 @@
             this.panel1.Size = new System.Drawing.Size(232, 890);
             this.panel1.TabIndex = 3;
             // 
+            // loading_panel
+            // 
+            this.loading_panel.Location = new System.Drawing.Point(13, 276);
+            this.loading_panel.Name = "loading_panel";
+            this.loading_panel.Size = new System.Drawing.Size(210, 102);
+            this.loading_panel.TabIndex = 6;
+            // 
             // People
             // 
             this.People.Dock = System.Windows.Forms.DockStyle.Top;
@@ -182,6 +189,7 @@
             this.Generate.TabIndex = 3;
             this.Generate.Text = "Generuj Rozliczenie";
             this.Generate.UseVisualStyleBackColor = true;
+            this.Generate.Click += new System.EventHandler(this.Generate_Click);
             // 
             // Delete
             // 
@@ -247,13 +255,6 @@
             // 
             this.daneBaza.DataSetName = "DaneBaza";
             this.daneBaza.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // loading_panel
-            // 
-            this.loading_panel.Location = new System.Drawing.Point(13, 276);
-            this.loading_panel.Name = "loading_panel";
-            this.loading_panel.Size = new System.Drawing.Size(210, 102);
-            this.loading_panel.TabIndex = 6;
             // 
             // Main
             // 

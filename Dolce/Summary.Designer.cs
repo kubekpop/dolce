@@ -33,7 +33,7 @@
             this.Osoba1Combo = new System.Windows.Forms.ComboBox();
             this.Osoba2Combo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.IleHajsu = new System.Windows.Forms.Label();
             this.LiczButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -49,7 +49,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(695, 70);
+            this.label2.Location = new System.Drawing.Point(549, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 25);
             this.label2.TabIndex = 1;
@@ -61,35 +61,35 @@
             this.Osoba1Combo.FormattingEnabled = true;
             this.Osoba1Combo.Location = new System.Drawing.Point(56, 161);
             this.Osoba1Combo.Name = "Osoba1Combo";
-            this.Osoba1Combo.Size = new System.Drawing.Size(121, 33);
+            this.Osoba1Combo.Size = new System.Drawing.Size(405, 33);
             this.Osoba1Combo.TabIndex = 2;
             // 
             // Osoba2Combo
             // 
             this.Osoba2Combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Osoba2Combo.FormattingEnabled = true;
-            this.Osoba2Combo.Location = new System.Drawing.Point(700, 161);
+            this.Osoba2Combo.Location = new System.Drawing.Point(543, 161);
             this.Osoba2Combo.Name = "Osoba2Combo";
-            this.Osoba2Combo.Size = new System.Drawing.Size(121, 33);
+            this.Osoba2Combo.Size = new System.Drawing.Size(420, 33);
             this.Osoba2Combo.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 522);
+            this.label3.Location = new System.Drawing.Point(51, 380);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Należność";
             // 
-            // label4
+            // IleHajsu
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(247, 521);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 25);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "<hajs>";
+            this.IleHajsu.AutoSize = true;
+            this.IleHajsu.Location = new System.Drawing.Point(223, 380);
+            this.IleHajsu.Name = "IleHajsu";
+            this.IleHajsu.Size = new System.Drawing.Size(76, 25);
+            this.IleHajsu.TabIndex = 5;
+            this.IleHajsu.Text = "<hajs>";
             // 
             // LiczButton
             // 
@@ -99,14 +99,15 @@
             this.LiczButton.TabIndex = 6;
             this.LiczButton.Text = "Licz";
             this.LiczButton.UseVisualStyleBackColor = true;
+            this.LiczButton.Click += new System.EventHandler(this.LiczButton_Click);
             // 
             // Summary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1394, 892);
+            this.ClientSize = new System.Drawing.Size(979, 450);
             this.Controls.Add(this.LiczButton);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.IleHajsu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Osoba2Combo);
             this.Controls.Add(this.Osoba1Combo);
@@ -126,7 +127,7 @@
         private System.Windows.Forms.ComboBox Osoba1Combo;
         private System.Windows.Forms.ComboBox Osoba2Combo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label IleHajsu;
         private System.Windows.Forms.Button LiczButton;
     }
 }

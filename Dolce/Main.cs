@@ -103,7 +103,11 @@ namespace Dolce
             }
         }
 
-       
+        private void Generate_Click(object sender, EventArgs e)
+        {
+            var summary = new Summary();
+            summary.Show();
+        }
     }
 }
     
