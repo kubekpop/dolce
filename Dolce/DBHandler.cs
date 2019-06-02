@@ -26,7 +26,15 @@ namespace Dolce
                     return new List<Rozliczenie>();
             }
         }
-
+        public void DeleteRozliczenie(int id)
+        {
+            switch (Method)
+            {
+                case "MSSQL":
+                    MSSQL.DeleteRozliczenie(id);
+                    break;
+            }
+        }
         public List<Osoba> PeopleSelectorId()
         {
             switch (Method)

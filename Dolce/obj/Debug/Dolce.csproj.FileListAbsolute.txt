@@ -33,3 +33,4 @@ C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.exe
 C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.pdb
 C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.Modify.resources
 C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.People.resources
+C:\Users\Kuba\Documents\GitHub\dolce\Dolce\obj\Debug\Dolce.Loading.resources

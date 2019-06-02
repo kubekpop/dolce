@@ -110,6 +110,16 @@ namespace Dolce
             conn.Close();
         }
 
+        static public void DeleteRozliczenie(int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand sql = new SqlCommand(null, conn);
+            string command = @"DELETE FROM Dolce.Transakcje WHERE IdTransakcji = "+id;
+            sql.CommandText = command;
+            conn.Open();
+            sql.ExecuteReader();
+            conn.Close();
+        }
         static public void AddOsoba(string imie, string nazwisko, string pesel)
         {
             SqlConnection conn = new SqlConnection(connectionString);

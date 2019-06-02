@@ -39,6 +39,7 @@
             this.Komu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rozliczone = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.People = new System.Windows.Forms.Button();
             this.Refresh = new System.Windows.Forms.Button();
             this.Generate = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.daneBaza = new Dolce.DaneBaza();
-            this.People = new System.Windows.Forms.Button();
+            this.loading_panel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.Recent)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -135,6 +136,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.loading_panel);
             this.panel1.Controls.Add(this.People);
             this.panel1.Controls.Add(this.Refresh);
             this.panel1.Controls.Add(this.Generate);
@@ -147,6 +149,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(232, 890);
             this.panel1.TabIndex = 3;
+            // 
+            // People
+            // 
+            this.People.Dock = System.Windows.Forms.DockStyle.Top;
+            this.People.Location = new System.Drawing.Point(0, 222);
+            this.People.Name = "People";
+            this.People.Size = new System.Drawing.Size(232, 47);
+            this.People.TabIndex = 5;
+            this.People.Text = "Osoby";
+            this.People.UseVisualStyleBackColor = true;
+            this.People.Click += new System.EventHandler(this.People_Click);
             // 
             // Refresh
             // 
@@ -180,6 +193,7 @@
             this.Delete.TabIndex = 2;
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // Edit
             // 
@@ -234,16 +248,12 @@
             this.daneBaza.DataSetName = "DaneBaza";
             this.daneBaza.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // People
+            // loading_panel
             // 
-            this.People.Dock = System.Windows.Forms.DockStyle.Top;
-            this.People.Location = new System.Drawing.Point(0, 222);
-            this.People.Name = "People";
-            this.People.Size = new System.Drawing.Size(232, 47);
-            this.People.TabIndex = 5;
-            this.People.Text = "Osoby";
-            this.People.UseVisualStyleBackColor = true;
-            this.People.Click += new System.EventHandler(this.People_Click);
+            this.loading_panel.Location = new System.Drawing.Point(13, 276);
+            this.loading_panel.Name = "loading_panel";
+            this.loading_panel.Size = new System.Drawing.Size(210, 102);
+            this.loading_panel.TabIndex = 6;
             // 
             // Main
             // 
@@ -287,6 +297,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Komu;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Rozliczone;
         private System.Windows.Forms.Button People;
+        private System.Windows.Forms.Panel loading_panel;
     }
 }
 

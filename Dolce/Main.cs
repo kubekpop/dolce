@@ -21,19 +21,20 @@ namespace Dolce
         private void GetRecents()
         {
             List<Rozliczenie> recents = main.RecentSelector();
-            for (int i=0; i<recents.Count(); i++)
+            for (int i = 0; i < recents.Count(); i++)
             {
                 AppendMainForm(recents[i].Id, recents[i].Ile, recents[i].Komentarz, recents[i].Kto, recents[i].Komu, recents[i].Rozliczone);
             }
         }
-        
+
         public Main()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-        }
 
+        }
+        
         private void AddNew_Click(object sender, EventArgs e)
         {
             var addNew = new AddNew(Recent);
@@ -65,12 +66,13 @@ namespace Dolce
         private void Refresh_Click(object sender, EventArgs e)
         {
             Recent.Rows.Clear();
+            //var Loading = new Loading();
+            //Loading.Show();
             GetRecents();
         }
 
         private void BindingSource1_CurrentChanged(object sender, EventArgs e)
         {
-
         }
 
         private void Edit_Click(object sender, EventArgs e)
@@ -88,5 +90,20 @@ namespace Dolce
             var people = new People();
             people.Show();
         }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            //List<int> ids = new List<int>();
+            if (Recent.SelectedRows.Count == 1)
+            {
+                int idd = Convert.ToInt32(Recent.SelectedRows[0].Cells[0].Value);
+                main.DeleteRozliczenie(idd);
+                Recent.Rows.Clear();
+                GetRecents();
+            }
+        }
+
+       
     }
 }
+    
