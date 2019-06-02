@@ -33,7 +33,7 @@ namespace Dolce
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            if(loadq.X > this.Width)
+            if(loadq.X > this.Width-20)
             {
                 timer1.Stop();
                 this.Close();
