@@ -14,6 +14,7 @@ namespace Dolce
 {
     public partial class Main : Form
     {
+        public delegate void LoadingFinished(bool close);
         /*
          * Set DB method and create object
          */
@@ -67,6 +68,11 @@ namespace Dolce
         {
             Recent.Rows.Clear();
             var Loading = new Loading();
+            LoadingFinished finished = (bool close) => {
+                if(close)
+                    Loading.Close();
+            };
+            Loading.finished = finished;
             Loading.Show();
             GetRecents();
         }

@@ -12,6 +12,7 @@ namespace Dolce
 {
     public partial class Loading : Form
     {
+        public Main.LoadingFinished finished;
         public Loading()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace Dolce
             if(loadq.Width > this.Width)
             {
                 timer1.Stop();
-                this.Close();
+                finished(true);
             }
             loadq.Width += 10;
             Invalidate();
