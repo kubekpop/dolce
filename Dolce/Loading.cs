@@ -17,13 +17,27 @@ namespace Dolce
             InitializeComponent();
             this.MaximizeBox = false;
         }
-          
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.BackColor = Color.LimeGreen;
+            this.TransparencyKey = Color.LimeGreen;
+            this.CenterToScreen();
+            loadq = new Rectangle(1, this.Height / 2, 20, 20);
+            Loading_Load(this,e);
+        }
         Pen red = new Pen(Color.Blue);
-        System.Drawing.SolidBrush bluefill = new System.Drawing.SolidBrush(Color.Blue);
-        Rectangle loadq = new Rectangle(1, 1, 20, 20);
+        System.Drawing.SolidBrush bluefill = new System.Drawing.SolidBrush(Color.CornflowerBlue);
+        Rectangle loadq;
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
+            if(loadq.X > this.Width)
+            {
+                timer1.Stop();
+                this.Close();
+            }
             loadq.X += 10;
             Invalidate();
         }
@@ -39,6 +53,7 @@ namespace Dolce
         {
             timer1.Enabled = true;
             timer1.Start();
+            
         }
     }
 }

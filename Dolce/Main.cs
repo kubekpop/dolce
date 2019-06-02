@@ -66,8 +66,8 @@ namespace Dolce
         private void Refresh_Click(object sender, EventArgs e)
         {
             Recent.Rows.Clear();
-            //var Loading = new Loading();
-            //Loading.Show();
+            var Loading = new Loading();
+            Loading.Show();
             GetRecents();
         }
 
