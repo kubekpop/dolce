@@ -12,3 +12,7 @@ Dolce/obj/Debug/Dolce.Summary.resources
 Dolce/obj/Debug/Dolce.csproj.FileListAbsolute.txt
 Dolce/obj/Debug/Dolce.csproj.GenerateResource.cache
 .vs/dolce/v15/.suo
+.vs/dolce/v16/.suo
+*.ide
+*.ide-shm
+*.ide-wal
