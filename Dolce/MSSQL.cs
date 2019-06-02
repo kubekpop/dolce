@@ -40,6 +40,33 @@ namespace Dolce
             return Elements;
         }
 
+        static public decimal GetSummary(Osoba osoba1, Osoba osoba2)
+        {
+            decimal summary = 0;
+            string command = @"Select SUM(Ile) from Dolce.Transakcje where IdKto = '" + osoba1.Id + "' and IdKomu = '" + osoba2.Id + "' and rozliczone = 0";
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand sql = new SqlCommand(null, conn);
+            sql.CommandText = command;
+            conn.Open();
+            SqlDataReader sm = sql.ExecuteReader();
+            while (sm.Read())
+            {
+                summary += Convert.ToDecimal(sm[0]);
+            }
+            conn.Close();
+            sql = new SqlCommand(null, conn);
+            command = @"Select SUM(Ile) from Dolce.Transakcje where IdKto = '" + osoba2.Id + "' and IdKomu = '" + osoba1.Id + "' and rozliczone = 0";
+            sql.CommandText = command;
+            conn.Open();
+            sm = sql.ExecuteReader();
+            while (sm.Read())
+            {
+                summary -= Convert.ToDecimal(sm[0]);
+            }
+            conn.Close();
+            return summary;
+        }
+
         static public Rozliczenie GetRozliczenie(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);

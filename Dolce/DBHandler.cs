@@ -15,6 +15,15 @@ namespace Dolce
         string method;
         public string Method { get => method; set => method = value; }
 
+        public decimal GetSummary(Osoba osoba1, Osoba osoba2)
+        {
+            switch (Method)
+            {
+                case "MSSQL":
+                    return MSSQL.GetSummary(osoba1, osoba2);
+            }
+            return 0;
+        }
         public List<Rozliczenie> RecentSelector()
         {
             switch (Method)
