@@ -84,7 +84,6 @@ namespace Dolce
                     break;
             }
         }
-
         public void AddOsoba(string imie, string nazwisko, string pesel)
         {
             switch (Method)
