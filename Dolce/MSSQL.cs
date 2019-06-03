@@ -51,7 +51,7 @@ namespace Dolce
             SqlDataReader sm = sql.ExecuteReader();
             while (sm.Read())
             {
-                summary += Convert.ToDecimal(sm[0]);
+                if(sm[0] != System.DBNull.Value) summary += Convert.ToDecimal(sm[0]);
             }
             conn.Close();
             sql = new SqlCommand(null, conn);
@@ -61,7 +61,7 @@ namespace Dolce
             sm = sql.ExecuteReader();
             while (sm.Read())
             {
-                summary -= Convert.ToDecimal(sm[0]);
+                if (sm[0] != System.DBNull.Value)  summary -= Convert.ToDecimal(sm[0]);
             }
             conn.Close();
             return summary;
